@@ -540,23 +540,21 @@ export function createBottleScene(
   resizeObserver.observe(canvas);
   resize();
 
-  let visible = true;
-  // O canvas nasce com display:none; o observador pode dar "invisível" e não voltar a avisar. Por isso as primeiras frames desenham sempre.
-  let warmFrames = 30;
-  const visibilityObserver = new IntersectionObserver(([entry]) => {
-    visible = entry?.isIntersecting ?? true;
-  });
-  visibilityObserver.observe(canvas);
+  // Lê a posição em cada frame em vez de usar um IntersectionObserver: com o canvas a nascer em
+  // display:none, o observador ficava preso em "invisível" e o modelo deixava de reagir.
+  function inView(): boolean {
+    const r = canvas.getBoundingClientRect();
+    return r.bottom > 0 && r.top < window.innerHeight;
+  }
 
   let last = performance.now();
   let elapsed = 0;
   renderer.setAnimationLoop(() => {
     const now = performance.now();
-    if (document.hidden || (!visible && warmFrames <= 0)) {
+    if (document.hidden || !inView()) {
       last = now;
       return;
     }
-    warmFrames -= 1;
     // Garante o tamanho mesmo que o ResizeObserver não tenha avisado a tempo.
     resize();
     const dt = Math.min((now - last) / 1000, 0.05);
@@ -612,7 +610,6 @@ export function createBottleScene(
       controller.abort();
       renderer.setAnimationLoop(null);
       resizeObserver.disconnect();
-      visibilityObserver.disconnect();
       // ponytail: liberta só as geometrias; materiais e texturas ficam para o GC, porque o modelo só desaparece ao sair da página.
       scene.traverse((object) => {
         if (object instanceof THREE.Mesh) {

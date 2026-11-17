@@ -14,7 +14,7 @@ if (!container) {
 const locale = localeFromPath(window.location.pathname) ?? detectLocale(window.navigator.languages ?? [FALLBACK_LOCALE]);
 const app = createElement(StrictMode, null, createElement(App, { locale }));
 
-initAnalytics();
+initAnalytics(locale);
 if (container.hasChildNodes()) {
   hydrateRoot(container, app);
 } else {

@@ -1,9 +1,16 @@
-import { inject } from '@vercel/analytics';
-import type { AnalyticsData } from '../types';
+import { computeRoute, inject, pageview } from '@vercel/analytics';
+import type { AnalyticsData, Locale } from '../types';
 
-/** Liga o Vercel Web Analytics (só visitas de página: os eventos personalizados exigem o plano Pro). */
-export function initAnalytics(): void {
-  inject();
+/**
+ * Liga o Vercel Web Analytics (só visitas de página: os eventos personalizados exigem o plano Pro).
+ * O painel Routes só mostra rotas que a framework indica. Sem framework, a visita é enviada à mão
+ * com a rota /[lang]/, que agrupa as seis línguas (o caminho real, como /pt/, continua no painel Pages).
+ * O envio automático fica desligado para a visita não contar duas vezes.
+ */
+export function initAnalytics(locale: Locale): void {
+  inject({ disableAutoTrack: true });
+  const path = window.location.pathname;
+  pageview({ route: computeRoute(path, { lang: locale }), path });
 }
 
 /**
