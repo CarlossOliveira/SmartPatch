@@ -1,0 +1,56 @@
+.cmp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.table {
+  border-top: 1px solid var(--ink);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.row.h {
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  padding: 14px 0;
+}
+.row .y,
+.row .n {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.92rem;
+}
+.row .y {
+  font-weight: 600;
+}
+.row .n {
+  color: var(--ink-2);
+}
+.row svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+@media (max-width: 620px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .row > :first-child {
+    grid-column: 1/-1;
+    font-weight: 600;
+  }
+  .row.h > :first-child {
+    display: none;
+  }
+}

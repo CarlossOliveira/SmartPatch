@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "SmartPatch — Smart thermal bottle for insulin pens",
+    "description": "SmartPatch: a thermal bottle with an LED ring and a screen that monitors the temperature of your insulin pens on the go and counts the 28 days of use. Pre-reservations open, no ice needed.",
+    "ogTitle": "SmartPatch — Know the state of your insulin at a glance",
+    "ogDescription": "Dry thermal bottle with an LED ring, temperature history and a 28-day counter. Pre-reservations open.",
+    "twitterTitle": "SmartPatch — smart thermal bottle for insulin",
+    "twitterDescription": "Green, amber or red LED ring. No ice, no doubts on the road.",
+    "orgDescription": "Smart thermal bottle for insulin pens in use."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "logo": "SmartPatch, home",
+    "menu": "Open menu",
+    "mainNav": "Main",
+    "languages": "Language"
+  },
+  "nav": ["The problem", "How it works", "Comparison", "Questions"],
+  "reserveShort": "Pre-reserve",
+  "hero": {
+    "eyebrow": "Pre-sale open · limited first batch",
+    "title": "Know the state of your insulin.",
+    "titleEm": "At a glance.",
+    "lede": "SmartPatch is a dry thermal bottle for insulin pens in use. An LED ring on the cap tells you if everything is fine, and the screen keeps the temperature history and counts the 28 days.",
+    "cta": "Pre-reserve mine",
+    "ghost": "See how it works",
+    "fine": "No payment, no commitment. Pre-reserving is just an email."
+  },
+  "stage": {
+    "canvasLabel": "3D model of the SmartPatch bottle with five insulin pens inside. Drag to rotate; shake to open.",
+    "svgLabel": "SmartPatch bottle with an LED ring on the cap and a temperature screen",
+    "tempLabel": "Temperature (°C)",
+    "daysLabel": "Days since you opened the pen",
+    "hint": "Drag to rotate · shake to open · slide on the rings",
+    "dialTemp": "TEMP",
+    "dialDays": "DAYS",
+    "daysSuffix": " days",
+    "led": {
+      "ok": "Green: suitable storage. The insulin is within its usage range.",
+      "warn": "Amber: caution. Temperature near the limit or the pen is nearing 28 days.",
+      "bad": "Red: excessive heat exposure. Do not use without checking with your healthcare professional."
+    }
+  },
+  "facts": [
+    { "value": "+1 h", "label": "of travel in the heat, the scenario that worries us" },
+    { "value": "28 days", "label": "counted on the screen since opening" },
+    { "value": "0 ice", "label": "dry insulation, no soaked bag" },
+    { "value": "3 colours", "label": "green, amber or red. No charts to read" }
+  ],
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "A summer car trip shouldn't be a doubt.",
+    "text": "A pen in use lasts up to 28 days outside the fridge, but it doesn't like heat. And spoiled insulin can't be seen.",
+    "items": [
+      {
+        "title": "Current solutions are bulky",
+        "text": "Cooler bags and ice packs take up space in your backpack and, when the ice melts, soak everything around."
+      },
+      {
+        "title": "A thermometer only tells you now",
+        "text": "It won't tell you if the pen spent two hours at 35 °C inside the car while you were at the beach."
+      },
+      {
+        "title": "When in doubt, throw it out",
+        "text": "Not knowing if it's still good, you either bin the pen as a precaution or take the risk. Both options are bad."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "titleBefore": "Three things a thermometer ",
+    "titleEm": "doesn't do",
+    "titleAfter": ".",
+    "tablist": "Features",
+    "tabs": [
+      {
+        "label": "Protects",
+        "hint": "Dry insulation",
+        "title": "Double wall, not a drop of ice.",
+        "text": "The insulation slows down heat peaks on long trips, so the pen stays at usage temperature without ice packs or bulky bags."
+      },
+      {
+        "label": "Alerts",
+        "hint": "LED ring on the cap",
+        "title": "Green, amber, red. That's it.",
+        "text": "A light ring on the cap shows the status instantly, even with the bottle in a half-open bag or in sunlight."
+      },
+      {
+        "label": "Remembers",
+        "hint": "History and 28 days",
+        "title": "It knows what happened while you were away.",
+        "text": "The screen keeps the trip's temperature history and counts the days since the pen was opened. The algorithm estimates the cumulative effect of heat, not just the current value."
+      }
+    ],
+    "layers": ["Outside", "vacuum", "Pen"],
+    "pills": ["Suitable storage", "Near the limit", "Excessive exposure"]
+  },
+  "compare": {
+    "eyebrow": "Comparison",
+    "title": "SmartPatch vs. ice pack.",
+    "cta": "I want mine",
+    "table": "Comparison between SmartPatch and a cooler bag with ice",
+    "topic": "On trips over 1 h",
+    "other": "Bag / thermometer",
+    "ours": "SmartPatch",
+    "no": "No",
+    "yes": "Yes",
+    "rows": [
+      "Logs the temperature if the car heats up without you",
+      "Helps you decide if the pen can still be trusted",
+      "Works without ice that melts in your bag",
+      "Counts the 28 days since opening"
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "What people usually ask us.",
+    "items": [
+      {
+        "question": "Is this for unopened insulin?",
+        "answer": "No. It is designed for pens already in use (up to 28 days outside the fridge). Unopened insulin should still be kept in the fridge, as the manufacturer states."
+      },
+      {
+        "question": "Do I need ice or to charge batteries?",
+        "answer": "It uses no ice: the insulation is dry and double-walled. The cap has low-power electronics for the LED, the screen and the temperature log."
+      },
+      {
+        "question": "How much does it cost and when does it arrive?",
+        "answer": "We are still validating the product, so there is no fixed price or date. Those who pre-reserve are told first, with no obligation to buy."
+      },
+      {
+        "question": "Is pre-reserving a purchase?",
+        "answer": "No. It is an email expressing interest. We do not ask for payment or bank details."
+      },
+      {
+        "question": "Does it replace medical advice?",
+        "answer": "No. It gives you information about the temperature the pen was exposed to. Always follow the insulin manufacturer's and your healthcare team's instructions."
+      }
+    ]
+  },
+  "final": {
+    "title": "Join the first-batch list.",
+    "text": "Tell us how you travel and how you carry your insulin today. It helps us build the right product and you'll be among the first to know when it's ready.",
+    "cta": "Pre-reserve by email"
+  },
+  "footer": { "project": "SmartPatch · Innovation and Entrepreneurship Project" },
+  "dialog": {
+    "title": "SmartPatch pre-reservation",
+    "intro": "Leave your email to be notified when the first batch is available. Everything else is optional.",
+    "close": "Close",
+    "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "age": "Age range",
+    "travel": "Trips over 1 h in the heat",
+    "current": "How do you carry your insulin today?",
+    "ageOptions": ["Prefer not to say", "Under 20", "20 to 35", "36 to 60", "Over 60"],
+    "travelOptions": ["Select", "Frequently", "Several times in summer / holidays", "Rarely"],
+    "currentOptions": ["Select", "Cooler bag with ice", "In my bag, unprotected", "Digital thermometer / other solution"],
+    "submit": "Send pre-reservation",
+    "sending": "Sending…",
+    "sent": "Pre-reservation received. Thank you! We will be in touch when the first batch is available.",
+    "failed": "We could not send it. Try again or write to us by email.",
+    "alt": "Prefer email? Write to",
+    "autoresponse": "Thank you for pre-reserving your SmartPatch! We will let you know when the first batch is available. Pre-reserving implies no payment or purchase commitment."
+  }
+}

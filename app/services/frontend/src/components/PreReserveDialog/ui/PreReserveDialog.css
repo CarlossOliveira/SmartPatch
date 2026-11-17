@@ -1,0 +1,91 @@
+dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  overflow: auto;
+  border: 0;
+  border-radius: 22px;
+  padding: 0;
+  width: min(520px, calc(100% - 32px));
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+  max-height: calc(100dvh - 32px);
+}
+dialog::backdrop {
+  background: rgba(14, 26, 43, 0.65);
+  backdrop-filter: blur(4px);
+}
+dialog[open] {
+  animation: pop 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+}
+.dlg {
+  padding: 32px;
+  position: relative;
+}
+.dlg h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.dlg p {
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+.dlg form {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+.dlg form[hidden] {
+  display: none;
+}
+.dlg .form-msg {
+  margin-top: 22px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.dlg label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.dlg input,
+.dlg select {
+  font: 400 1rem var(--sans);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+.dlg input:focus,
+.dlg select:focus {
+  border-color: var(--ink);
+  outline: 0;
+}
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--paper-2);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.dlg .alt {
+  font-size: 0.8rem;
+  margin-top: 14px;
+  text-align: center;
+}

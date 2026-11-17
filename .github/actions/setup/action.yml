@@ -1,0 +1,17 @@
+name: Setup
+description: Instala o Node, o pnpm e as dependências do workspace app/.
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+      with:
+        package_json_file: app/package.json
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: pnpm
+        cache-dependency-path: app/pnpm-lock.yaml
+    - name: Instalar dependências
+      shell: bash
+      working-directory: app
+      run: pnpm install --frozen-lockfile

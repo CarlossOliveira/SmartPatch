@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "SmartPatch — Botella térmica inteligente para plumas de insulina",
+    "description": "SmartPatch: botella térmica con anillo LED y pantalla que vigila la temperatura de tus plumas de insulina de viaje y cuenta los 28 días de uso. Prerreserva abierta, sin hielo.",
+    "ogTitle": "SmartPatch — Sabe en qué estado está tu insulina de un vistazo",
+    "ogDescription": "Botella térmica en seco con anillo LED, historial de temperatura y contador de 28 días. Prerreserva abierta.",
+    "twitterTitle": "SmartPatch — botella térmica inteligente para insulina",
+    "twitterDescription": "Anillo LED verde, ámbar o rojo. Sin hielo, sin dudas de viaje.",
+    "orgDescription": "Botella térmica inteligente para plumas de insulina en uso."
+  },
+  "a11y": {
+    "skip": "Saltar al contenido",
+    "logo": "SmartPatch, inicio",
+    "menu": "Abrir menú",
+    "mainNav": "Principal",
+    "languages": "Idioma"
+  },
+  "nav": ["El problema", "Cómo funciona", "Comparación", "Preguntas"],
+  "reserveShort": "Prerreservar",
+  "hero": {
+    "eyebrow": "Preventa abierta · primer lote limitado",
+    "title": "Sabe en qué estado está tu insulina.",
+    "titleEm": "De un vistazo.",
+    "lede": "SmartPatch es una botella térmica en seco para plumas de insulina en uso. Un anillo LED en la tapa te dice si todo va bien, y la pantalla guarda el historial de temperatura y cuenta los 28 días.",
+    "cta": "Prerreservar la mía",
+    "ghost": "Ver cómo funciona",
+    "fine": "Sin pago y sin compromiso. La prerreserva es solo un correo."
+  },
+  "stage": {
+    "canvasLabel": "Modelo 3D de la botella SmartPatch con cinco plumas de insulina dentro. Arrastra para girar; agita para abrir.",
+    "svgLabel": "Botella SmartPatch con anillo LED en la tapa y pantalla de temperatura",
+    "tempLabel": "Temperatura (°C)",
+    "daysLabel": "Días desde que abriste la pluma",
+    "hint": "Arrastra para girar · agita para abrir · desliza por los anillos",
+    "dialTemp": "TEMP",
+    "dialDays": "DÍAS",
+    "daysSuffix": " días",
+    "led": {
+      "ok": "Verde: conservación adecuada. La insulina está dentro del intervalo de uso.",
+      "warn": "Ámbar: atención. Temperatura cerca del límite o pluma a punto de cumplir 28 días.",
+      "bad": "Rojo: exposición excesiva al calor. No la uses sin consultarlo con tu profesional de la salud."
+    }
+  },
+  "facts": [
+    { "value": "+1 h", "label": "de viaje con calor, el escenario que nos preocupa" },
+    { "value": "28 días", "label": "contados en la pantalla desde la apertura" },
+    { "value": "0 hielo", "label": "aislamiento en seco, sin bolsa mojada" },
+    { "value": "3 colores", "label": "verde, ámbar o rojo. Sin interpretar gráficos" }
+  ],
+  "problem": {
+    "eyebrow": "El problema",
+    "title": "Un viaje en coche en verano no debería ser una duda.",
+    "text": "Una pluma en uso aguanta hasta 28 días fuera de la nevera, pero no soporta bien el calor. Y la insulina estropeada no se ve.",
+    "items": [
+      {
+        "title": "Las soluciones actuales son pesadas",
+        "text": "Las bolsas térmicas y los bloques de hielo ocupan sitio en la mochila y, cuando el hielo se derrite, lo mojan todo."
+      },
+      {
+        "title": "Un termómetro solo dice el ahora",
+        "text": "No te cuenta si la pluma pasó dos horas a 35 °C dentro del coche mientras estabas en la playa."
+      },
+      {
+        "title": "En la duda, se tira",
+        "text": "Sin saber si aún sirve, o tiras la pluma por precaución o te arriesgas. Las dos opciones son malas."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "Cómo funciona",
+    "titleBefore": "Tres cosas que un termómetro ",
+    "titleEm": "no hace",
+    "titleAfter": ".",
+    "tablist": "Funciones",
+    "tabs": [
+      {
+        "label": "Protege",
+        "hint": "Aislamiento en seco",
+        "title": "Doble pared, sin una gota de hielo.",
+        "text": "El aislamiento suaviza los picos de calor en viajes largos, para que la pluma se mantenga a temperatura de uso sin bloques de hielo ni bolsas voluminosas."
+      },
+      {
+        "label": "Avisa",
+        "hint": "Anillo LED en la tapa",
+        "title": "Verde, ámbar, rojo. Y ya está.",
+        "text": "Un anillo de luz en la tapa muestra el estado al instante, incluso con la botella dentro de una bolsa entreabierta o a pleno sol."
+      },
+      {
+        "label": "Recuerda",
+        "hint": "Historial y 28 días",
+        "title": "Sabe lo que pasó cuando no estabas.",
+        "text": "La pantalla guarda el historial de temperatura del viaje y cuenta los días desde que se abrió la pluma. El algoritmo estima el efecto acumulado del calor, no solo el valor actual."
+      }
+    ],
+    "layers": ["Exterior", "vacío", "Pluma"],
+    "pills": ["Conservación adecuada", "Cerca del límite", "Exposición excesiva"]
+  },
+  "compare": {
+    "eyebrow": "Comparación",
+    "title": "SmartPatch frente a la bolsa con hielo.",
+    "cta": "Quiero la mía",
+    "table": "Comparación entre SmartPatch y una bolsa térmica con hielo",
+    "topic": "En viajes de más de 1 h",
+    "other": "Bolsa / termómetro",
+    "ours": "SmartPatch",
+    "no": "No",
+    "yes": "Sí",
+    "rows": [
+      "Registra la temperatura si el coche se calienta sin ti",
+      "Ayuda a decidir si la pluma sigue siendo de fiar",
+      "Funciona sin hielo que se derrita en la mochila",
+      "Cuenta los 28 días desde la apertura"
+    ]
+  },
+  "faq": {
+    "eyebrow": "Preguntas",
+    "title": "Lo que nos suelen preguntar.",
+    "items": [
+      {
+        "question": "¿Sirve para insulina sin abrir?",
+        "answer": "No. Está pensada para plumas que ya están en uso (hasta 28 días fuera de la nevera). La insulina sin abrir debe seguir guardándose en la nevera, como indica el fabricante."
+      },
+      {
+        "question": "¿Necesito hielo o cargar baterías?",
+        "answer": "No usa hielo: el aislamiento es en seco, de doble pared. La tapa lleva electrónica de bajo consumo para el LED, la pantalla y el registro de temperatura."
+      },
+      {
+        "question": "¿Cuánto cuesta y cuándo llega?",
+        "answer": "Aún estamos validando el producto, así que no hay precio ni fecha cerrados. Quien prerreserva recibe el aviso primero, sin compromiso de compra."
+      },
+      {
+        "question": "¿La prerreserva es una compra?",
+        "answer": "No. Es un correo para mostrar interés. No pedimos pago ni datos bancarios."
+      },
+      {
+        "question": "¿Sustituye el consejo médico?",
+        "answer": "No. Te da información sobre la temperatura a la que estuvo expuesta la pluma. Sigue siempre las indicaciones del fabricante de la insulina y de tu equipo de salud."
+      }
+    ]
+  },
+  "final": {
+    "title": "Apúntate a la lista del primer lote.",
+    "text": "Cuéntanos cómo viajas y cómo llevas hoy la insulina. Nos ayuda a construir el producto adecuado y serás de los primeros en saber cuándo esté listo.",
+    "cta": "Prerreservar por correo"
+  },
+  "footer": { "project": "SmartPatch · Proyecto de Innovación y Emprendimiento" },
+  "dialog": {
+    "title": "Prerreserva SmartPatch",
+    "intro": "Déjanos tu correo para avisarte cuando el primer lote esté disponible. El resto es opcional.",
+    "close": "Cerrar",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "ejemplo@correo.com",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "age": "Rango de edad",
+    "travel": "Viajes de más de 1 h con calor",
+    "current": "¿Cómo llevas hoy la insulina?",
+    "ageOptions": ["Prefiero no decirlo", "Menos de 20 años", "De 20 a 35 años", "De 36 a 60 años", "Más de 60 años"],
+    "travelOptions": ["Seleccionar", "Con frecuencia", "Varias veces en verano / vacaciones", "Rara vez"],
+    "currentOptions": ["Seleccionar", "Bolsa térmica con hielo", "En el bolso, sin protección", "Termómetro digital / otra solución"],
+    "submit": "Enviar prerreserva",
+    "sending": "Enviando…",
+    "sent": "Prerreserva registrada. ¡Gracias! Te contactaremos cuando el primer lote esté disponible.",
+    "failed": "No se pudo enviar. Inténtalo de nuevo o escríbenos por correo.",
+    "alt": "¿Prefieres el correo? Escribe a",
+    "autoresponse": "¡Gracias por prerreservar tu SmartPatch! Te avisaremos cuando el primer lote esté disponible. La prerreserva no implica pago ni compromiso de compra."
+  }
+}

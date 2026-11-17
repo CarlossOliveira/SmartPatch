@@ -1,0 +1,42 @@
+name: Dependabot auto-merge
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  config:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.read.outputs.enabled }}
+      jobs: ${{ steps.read.outputs.jobs }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - id: read
+        working-directory: app
+        run: node tooling/scripts/automationConfig.mjs github dependabot-automerge
+
+  automerge:
+    needs: config
+    if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).automerge && github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      # Versões maiores (major) ficam para revisão manual: podem quebrar sem que os testes o vejam.
+      - name: Aprovar e ativar o auto-merge
+        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr review --approve "$PR_URL"
+          gh pr merge --auto --squash "$PR_URL"

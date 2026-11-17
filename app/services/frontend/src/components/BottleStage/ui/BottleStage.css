@@ -1,0 +1,202 @@
+.stage {
+  --gh: clamp(440px, 66vh, 720px);
+  position: relative;
+  width: min(100% + 40px, 920px);
+  margin: clamp(16px, 3vw, 36px) -20px 0;
+}
+.stage::before {
+  content: '';
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 10%;
+  height: 62%;
+  background: radial-gradient(closest-side, var(--led), transparent);
+  opacity: 0.13;
+  filter: blur(56px);
+  transition: background 0.6s;
+  pointer-events: none;
+}
+.bottle-wrap {
+  position: relative;
+  perspective: 900px;
+}
+.bottle-wrap::after {
+  content: '';
+  position: absolute;
+  left: 40%;
+  right: 40%;
+  bottom: 12%;
+  height: 26px;
+  background: radial-gradient(closest-side, rgba(14, 26, 43, 0.3), transparent);
+  filter: blur(6px);
+  opacity: calc(1 - var(--open, 0));
+  pointer-events: none;
+}
+.bottle {
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+  height: var(--gh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottle svg {
+  width: auto;
+  height: 72%;
+  filter: drop-shadow(0 26px 22px rgba(14, 26, 43, 0.25));
+}
+.stage-canvas {
+  display: none;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: var(--gh);
+  touch-action: pan-y;
+  cursor: grab;
+  outline: 0;
+}
+.stage-canvas:active {
+  cursor: grabbing;
+}
+.stage.gl .stage-canvas {
+  display: block;
+}
+.stage.gl .bottle {
+  display: none;
+}
+.led-outer,
+.led-core {
+  transition: stroke 0.5s;
+}
+.led-outer {
+  animation: breathe 3.2s ease-in-out infinite;
+}
+@keyframes breathe {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* anéis subtis à volta do modelo */
+.dials {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(100%, calc(var(--gh) * 1.3));
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+.dial {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.dial:hover,
+.dial.on {
+  opacity: 1;
+}
+.d-track {
+  fill: none;
+  stroke: rgba(14, 26, 43, 0.13);
+  stroke-width: 0.5;
+}
+.d-tick {
+  stroke: rgba(14, 26, 43, 0.2);
+  stroke-width: 0.35;
+}
+.d-fill {
+  fill: none;
+  stroke: var(--led);
+  stroke-width: 1;
+  stroke-linecap: round;
+  transition: stroke 0.5s;
+}
+.d-knob {
+  fill: var(--ink);
+  stroke: var(--paper);
+  stroke-width: 1.3;
+  transition: r 0.2s;
+}
+.dial:hover .d-knob,
+.dial.on .d-knob {
+  r: 4;
+}
+.d-hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 18;
+  pointer-events: stroke;
+  cursor: pointer;
+  touch-action: none;
+}
+.d-val {
+  font: 600 6px var(--sans);
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.d-lbl {
+  font: 600 3px var(--sans);
+  letter-spacing: 0.2em;
+  fill: var(--ink-2);
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.status {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--ink-2);
+  max-width: 34em;
+  min-height: 2.6em;
+  margin: 4px auto 0;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+.dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--led);
+  box-shadow: 0 0 8px var(--led);
+  transform: translateY(-1px);
+  transition:
+    background 0.5s,
+    box-shadow 0.5s;
+}
+.hint {
+  text-align: center;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  opacity: 0.5;
+  margin: 6px 0 22px;
+  display: none;
+}
+.stage.gl .hint {
+  display: block;
+}
+@media (max-width: 560px) {
+  .stage {
+    --gh: clamp(360px, 54vh, 480px);
+  }
+  .d-val {
+    font-size: 7.5px;
+  }
+  .d-lbl {
+    font-size: 3.8px;
+  }
+}

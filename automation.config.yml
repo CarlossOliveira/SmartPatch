@@ -1,0 +1,17 @@
+workflows:
+  ci:
+    enabled: true
+    jobs:
+      lint: { enabled: true }
+      architecture: { enabled: true }
+      test: { enabled: true }
+      build: { enabled: true }
+  security:
+    enabled: true
+    jobs:
+      secrets: { enabled: true }
+      vulnscan: { enabled: true }
+  dependabot-automerge:
+    enabled: true
+    jobs:
+      automerge: { enabled: true }

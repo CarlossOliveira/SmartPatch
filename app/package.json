@@ -1,0 +1,30 @@
+{
+  "name": "smartpatch",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @smartpatch/frontend dev",
+    "build": "pnpm --filter @smartpatch/frontend build",
+    "lint": "eslint .",
+    "typecheck": "pnpm --filter @smartpatch/frontend typecheck",
+    "test": "pnpm --filter @smartpatch/frontend test",
+    "test:tooling": "node --test \"tooling/tests/*.test.mjs\"",
+    "architecture": "depcruise --config .dependency-cruiser.cjs services/frontend/src"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "dependency-cruiser": "^18.8.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.8",
+    "globals": "^17.14.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.73.0",
+    "yaml": "^2.9.1"
+  }
+}

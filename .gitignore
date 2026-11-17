@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vercel/
+.DS_Store
+.claude/
+
+*.env*
+!*.env.example
+*.gitignore.*

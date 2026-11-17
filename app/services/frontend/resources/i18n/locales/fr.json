@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "SmartPatch — Bouteille isotherme intelligente pour stylos à insuline",
+    "description": "SmartPatch : une bouteille isotherme avec anneau LED et écran qui surveille la température de vos stylos à insuline en voyage et compte les 28 jours d'utilisation. Précommande ouverte, sans glace.",
+    "ogTitle": "SmartPatch — Sachez en un coup d'œil dans quel état est votre insuline",
+    "ogDescription": "Bouteille isotherme à sec avec anneau LED, historique de température et compteur de 28 jours. Précommande ouverte.",
+    "twitterTitle": "SmartPatch — bouteille isotherme intelligente pour insuline",
+    "twitterDescription": "Anneau LED vert, orange ou rouge. Sans glace, sans doute en voyage.",
+    "orgDescription": "Bouteille isotherme intelligente pour stylos à insuline en cours d'utilisation."
+  },
+  "a11y": {
+    "skip": "Aller au contenu",
+    "logo": "SmartPatch, accueil",
+    "menu": "Ouvrir le menu",
+    "mainNav": "Principale",
+    "languages": "Langue"
+  },
+  "nav": ["Le problème", "Comment ça marche", "Comparaison", "Questions"],
+  "reserveShort": "Précommander",
+  "hero": {
+    "eyebrow": "Prévente ouverte · premier lot limité",
+    "title": "Sachez dans quel état est votre insuline.",
+    "titleEm": "En un coup d'œil.",
+    "lede": "SmartPatch est une bouteille isotherme à sec pour stylos à insuline en cours d'utilisation. Un anneau LED sur le bouchon vous dit si tout va bien, et l'écran garde l'historique de température et compte les 28 jours.",
+    "cta": "Précommander la mienne",
+    "ghost": "Voir comment ça marche",
+    "fine": "Sans paiement, sans engagement. La précommande n'est qu'un e-mail."
+  },
+  "stage": {
+    "canvasLabel": "Modèle 3D de la bouteille SmartPatch avec cinq stylos à insuline à l'intérieur. Faites glisser pour tourner ; secouez pour ouvrir.",
+    "svgLabel": "Bouteille SmartPatch avec anneau LED sur le bouchon et écran de température",
+    "tempLabel": "Température (°C)",
+    "daysLabel": "Jours depuis l'ouverture du stylo",
+    "hint": "Glissez pour tourner · secouez pour ouvrir · faites glisser sur les anneaux",
+    "dialTemp": "TEMP",
+    "dialDays": "JOURS",
+    "daysSuffix": " jours",
+    "led": {
+      "ok": "Vert : conservation adaptée. L'insuline est dans la plage d'utilisation.",
+      "warn": "Orange : attention. Température proche de la limite ou stylo proche des 28 jours.",
+      "bad": "Rouge : exposition excessive à la chaleur. Ne l'utilisez pas sans l'avis de votre professionnel de santé."
+    }
+  },
+  "facts": [
+    { "value": "+1 h", "label": "de voyage par temps chaud, le scénario qui nous préoccupe" },
+    { "value": "28 jours", "label": "comptés à l'écran depuis l'ouverture" },
+    { "value": "0 glace", "label": "isolation à sec, sans sac mouillé" },
+    { "value": "3 couleurs", "label": "vert, orange ou rouge. Sans graphiques à interpréter" }
+  ],
+  "problem": {
+    "eyebrow": "Le problème",
+    "title": "Un trajet en voiture l'été ne devrait pas être un doute.",
+    "text": "Un stylo en cours d'utilisation tient jusqu'à 28 jours hors du réfrigérateur, mais il n'aime pas la chaleur. Et l'insuline abîmée ne se voit pas.",
+    "items": [
+      {
+        "title": "Les solutions actuelles sont encombrantes",
+        "text": "Les sacs isothermes et les blocs de glace prennent de la place dans le sac à dos et, quand la glace fond, mouillent tout autour."
+      },
+      {
+        "title": "Un thermomètre ne dit que l'instant présent",
+        "text": "Il ne vous dit pas si le stylo a passé deux heures à 35 °C dans la voiture pendant que vous étiez à la plage."
+      },
+      {
+        "title": "Dans le doute, on jette",
+        "text": "Sans savoir s'il est encore bon, soit vous jetez le stylo par précaution, soit vous prenez le risque. Les deux options sont mauvaises."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "Comment ça marche",
+    "titleBefore": "Trois choses qu'un thermomètre ",
+    "titleEm": "ne fait pas",
+    "titleAfter": ".",
+    "tablist": "Fonctionnalités",
+    "tabs": [
+      {
+        "label": "Protège",
+        "hint": "Isolation à sec",
+        "title": "Double paroi, sans une goutte de glace.",
+        "text": "L'isolation atténue les pics de chaleur lors des longs trajets, pour que le stylo reste à sa température d'utilisation sans blocs de glace ni sacs volumineux."
+      },
+      {
+        "label": "Alerte",
+        "hint": "Anneau LED sur le bouchon",
+        "title": "Vert, orange, rouge. C'est tout.",
+        "text": "Un anneau lumineux sur le bouchon montre l'état instantanément, même avec la bouteille dans un sac entrouvert ou en plein soleil."
+      },
+      {
+        "label": "Se souvient",
+        "hint": "Historique et 28 jours",
+        "title": "Il sait ce qui s'est passé en votre absence.",
+        "text": "L'écran garde l'historique de température du voyage et compte les jours depuis l'ouverture du stylo. L'algorithme estime l'effet cumulé de la chaleur, pas seulement la valeur actuelle."
+      }
+    ],
+    "layers": ["Extérieur", "vide", "Stylo"],
+    "pills": ["Conservation adaptée", "Près de la limite", "Exposition excessive"]
+  },
+  "compare": {
+    "eyebrow": "Comparaison",
+    "title": "SmartPatch contre sac avec glace.",
+    "cta": "Je veux la mienne",
+    "table": "Comparaison entre SmartPatch et un sac isotherme avec glace",
+    "topic": "Pour les trajets de plus de 1 h",
+    "other": "Sac / thermomètre",
+    "ours": "SmartPatch",
+    "no": "Non",
+    "yes": "Oui",
+    "rows": [
+      "Enregistre la température si la voiture chauffe sans vous",
+      "Aide à décider si le stylo est encore fiable",
+      "Fonctionne sans glace qui fond dans le sac",
+      "Compte les 28 jours depuis l'ouverture"
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Ce que l'on nous demande souvent.",
+    "items": [
+      {
+        "question": "Est-ce adapté à l'insuline non ouverte ?",
+        "answer": "Non. Il est conçu pour les stylos déjà en cours d'utilisation (jusqu'à 28 jours hors du réfrigérateur). L'insuline non ouverte doit rester au réfrigérateur, comme l'indique le fabricant."
+      },
+      {
+        "question": "Faut-il de la glace ou recharger des piles ?",
+        "answer": "Il n'utilise pas de glace : l'isolation est à sec, à double paroi. Le bouchon contient une électronique basse consommation pour la LED, l'écran et l'enregistrement de la température."
+      },
+      {
+        "question": "Combien ça coûte et quand ça arrive ?",
+        "answer": "Nous validons encore le produit, il n'y a donc ni prix ni date définitifs. Ceux qui précommandent sont prévenus en premier, sans engagement d'achat."
+      },
+      {
+        "question": "La précommande est-elle un achat ?",
+        "answer": "Non. C'est un e-mail pour manifester votre intérêt. Nous ne demandons ni paiement ni coordonnées bancaires."
+      },
+      {
+        "question": "Cela remplace-t-il un avis médical ?",
+        "answer": "Non. Il vous informe de la température à laquelle le stylo a été exposé. Suivez toujours les indications du fabricant de l'insuline et de votre équipe de santé."
+      }
+    ]
+  },
+  "final": {
+    "title": "Rejoignez la liste du premier lot.",
+    "text": "Dites-nous comment vous voyagez et comment vous transportez aujourd'hui votre insuline. Cela nous aide à construire le bon produit et vous serez parmi les premiers prévenus.",
+    "cta": "Précommander par e-mail"
+  },
+  "footer": { "project": "SmartPatch · Projet d'Innovation et d'Entrepreneuriat" },
+  "dialog": {
+    "title": "Précommande SmartPatch",
+    "intro": "Laissez votre e-mail pour être prévenu(e) quand le premier lot sera disponible. Le reste est facultatif.",
+    "close": "Fermer",
+    "email": "E-mail",
+    "emailPlaceholder": "exemple@email.com",
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "age": "Tranche d'âge",
+    "travel": "Trajets de plus de 1 h par temps chaud",
+    "current": "Comment transportez-vous votre insuline aujourd'hui ?",
+    "ageOptions": ["Je préfère ne pas le dire", "Moins de 20 ans", "De 20 à 35 ans", "De 36 à 60 ans", "Plus de 60 ans"],
+    "travelOptions": ["Sélectionner", "Souvent", "Plusieurs fois l'été / en vacances", "Rarement"],
+    "currentOptions": ["Sélectionner", "Sac isotherme avec glace", "Dans le sac, sans protection", "Thermomètre numérique / autre solution"],
+    "submit": "Envoyer la précommande",
+    "sending": "Envoi…",
+    "sent": "Précommande enregistrée. Merci ! Nous vous contacterons quand le premier lot sera disponible.",
+    "failed": "L'envoi a échoué. Réessayez ou écrivez-nous par e-mail.",
+    "alt": "Vous préférez écrire ? Contactez",
+    "autoresponse": "Merci d'avoir précommandé votre SmartPatch ! Nous vous préviendrons quand le premier lot sera disponible. La précommande n'implique ni paiement ni engagement d'achat."
+  }
+}

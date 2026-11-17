@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  config:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.read.outputs.enabled }}
+      jobs: ${{ steps.read.outputs.jobs }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - id: read
+        working-directory: app
+        run: node tooling/scripts/automationConfig.mjs github ci
+
+  lint:
+    needs: config
+    if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: ESLint
+        working-directory: app
+        run: pnpm lint
+      - name: TypeScript
+        working-directory: app
+        run: pnpm typecheck
+
+  architecture:
+    needs: config
+    if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).architecture
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Camadas e ciclos
+        working-directory: app
+        run: pnpm architecture
+      - name: Estrutura e automation.config.yml
+        working-directory: app
+        run: pnpm test:tooling
+
+  test:
+    needs: config
+    if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - working-directory: app
+        run: pnpm test
+
+  build:
+    needs: config
+    if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).build
+    runs-on: ubuntu-latest
+    env:
+      SITE_URL: http://localhost:4173
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - working-directory: app
+        run: pnpm build

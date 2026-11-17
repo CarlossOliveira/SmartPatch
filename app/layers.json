@@ -1,0 +1,5 @@
+{
+  "comment": "Ordem das camadas, de baixo para cima. Uma pasta só importa as que estão abaixo. Lido pelo dependency-cruiser e pelos testes.",
+  "top": ["types", "defaults", "utils", "services", "hooks", "primitives", "components", "ui"],
+  "unit": ["types", "defaults", "utils", "hooks", "ui"]
+}

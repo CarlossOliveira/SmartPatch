@@ -1,0 +1,16 @@
+.final {
+  background: var(--paper-2);
+  text-align: center;
+}
+.final h2 {
+  max-width: 14em;
+  margin: 0 auto 20px;
+}
+.final p {
+  color: var(--ink-2);
+  max-width: 32em;
+  margin: 0 auto 32px;
+}
+.final .cta-row {
+  justify-content: center;
+}

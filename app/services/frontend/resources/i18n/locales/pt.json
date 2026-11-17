@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "title": "SmartPatch — Garrafa térmica inteligente para canetas de insulina",
+    "description": "SmartPatch: garrafa térmica com anel LED e ecrã que monitoriza a temperatura das tuas canetas de insulina em viagem e conta os 28 dias de utilização. Pré-reserva aberta, sem gelo.",
+    "ogTitle": "SmartPatch — Sabe em que estado está a tua insulina, num olhar",
+    "ogDescription": "Garrafa térmica a seco com anel LED, histórico de temperatura e contador de 28 dias. Pré-reserva aberta.",
+    "twitterTitle": "SmartPatch — garrafa térmica inteligente para insulina",
+    "twitterDescription": "Anel LED verde, amarelo ou vermelho. Sem gelo, sem dúvidas em viagem.",
+    "orgDescription": "Garrafa térmica inteligente para canetas de insulina em utilização."
+  },
+  "a11y": {
+    "skip": "Saltar para o conteúdo",
+    "logo": "SmartPatch, início",
+    "menu": "Abrir menu",
+    "mainNav": "Principal",
+    "languages": "Língua"
+  },
+  "nav": ["O problema", "Como funciona", "Comparação", "Perguntas"],
+  "reserveShort": "Pré-reservar",
+  "hero": {
+    "eyebrow": "Pré-venda aberta · 1.º lote limitado",
+    "title": "Sabe em que estado está a tua insulina.",
+    "titleEm": "Num olhar.",
+    "lede": "A SmartPatch é uma garrafa térmica a seco para canetas de insulina em utilização. Um anel LED na tampa diz-te se está tudo bem, e o ecrã guarda o histórico de temperatura e conta os 28 dias.",
+    "cta": "Pré-reservar a minha",
+    "ghost": "Ver como funciona",
+    "fine": "Sem pagamento, sem compromisso. A pré-reserva é só um email."
+  },
+  "stage": {
+    "canvasLabel": "Modelo 3D da garrafa SmartPatch com cinco canetas de insulina no interior. Arrasta para rodar; agita para abrir.",
+    "svgLabel": "Garrafa SmartPatch com anel LED na tampa e ecrã de temperatura",
+    "tempLabel": "Temperatura (°C)",
+    "daysLabel": "Dias desde que abriste a caneta",
+    "hint": "Arrasta para rodar · agita para abrir · desliza nos anéis",
+    "dialTemp": "TEMP",
+    "dialDays": "DIAS",
+    "daysSuffix": " dias",
+    "led": {
+      "ok": "Verde: conservação adequada. A insulina está dentro do intervalo de utilização.",
+      "warn": "Amarelo: atenção. Temperatura perto do limite ou caneta a chegar aos 28 dias.",
+      "bad": "Vermelho: exposição excessiva ao calor. Não uses sem confirmar com o teu profissional de saúde."
+    }
+  },
+  "facts": [
+    { "value": "+1 h", "label": "de viagem no calor, o cenário que nos preocupa" },
+    { "value": "28 dias", "label": "contados no ecrã desde a abertura" },
+    { "value": "0 gelo", "label": "isolamento a seco, sem mala molhada" },
+    { "value": "3 cores", "label": "verde, amarelo ou vermelho. Sem interpretar gráficos" }
+  ],
+  "problem": {
+    "eyebrow": "O problema",
+    "title": "Uma viagem de carro no verão não devia ser uma dúvida.",
+    "text": "Uma caneta em utilização aguenta até 28 dias fora do frigorífico, mas não gosta de calor. E a insulina estragada não se vê.",
+    "items": [
+      {
+        "title": "As soluções atuais são pesadas",
+        "text": "Bolsas térmicas e blocos de gelo ocupam espaço na mochila e, quando o gelo derrete, molham tudo à volta."
+      },
+      {
+        "title": "Um termómetro só diz o agora",
+        "text": "Não te conta se a caneta passou duas horas a 35 °C dentro do carro enquanto estiveste na praia."
+      },
+      {
+        "title": "Na dúvida, deita-se fora",
+        "text": "Sem saber se ainda está boa, ou deitas a caneta ao lixo por precaução ou arriscas. Ambas as opções são más."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "Como funciona",
+    "titleBefore": "Três coisas que um termómetro ",
+    "titleEm": "não faz",
+    "titleAfter": ".",
+    "tablist": "Funcionalidades",
+    "tabs": [
+      {
+        "label": "Protege",
+        "hint": "Isolamento a seco",
+        "title": "Parede dupla, sem uma gota de gelo.",
+        "text": "O isolamento abranda os picos de calor em viagens longas, para a caneta ficar à temperatura de utilização sem blocos de gelo nem bolsas volumosas."
+      },
+      {
+        "label": "Avisa",
+        "hint": "Anel LED na tampa",
+        "title": "Verde, amarelo, vermelho. Já está.",
+        "text": "Um anel de luz na tampa mostra o estado ao instante, mesmo com a garrafa dentro da mala entreaberta ou à luz do sol."
+      },
+      {
+        "label": "Lembra-se",
+        "hint": "Histórico e 28 dias",
+        "title": "Sabe o que se passou quando não estavas.",
+        "text": "O ecrã guarda o histórico de temperatura da viagem e conta os dias desde a abertura da caneta. O algoritmo estima o efeito acumulado do calor, não apenas o valor atual."
+      }
+    ],
+    "layers": ["Exterior", "vácuo", "Caneta"],
+    "pills": ["Conservação adequada", "Perto do limite", "Exposição excessiva"]
+  },
+  "compare": {
+    "eyebrow": "Comparação",
+    "title": "SmartPatch vs. bolsa com gelo.",
+    "cta": "Quero a minha",
+    "table": "Comparação entre SmartPatch e bolsa térmica com gelo",
+    "topic": "Em viagens com mais de 1 h",
+    "other": "Bolsa / termómetro",
+    "ours": "SmartPatch",
+    "no": "Não",
+    "yes": "Sim",
+    "rows": [
+      "Regista a temperatura se o carro aquecer sem ti",
+      "Ajuda a decidir se a caneta ainda é de confiança",
+      "Funciona sem gelo que derrete na mala",
+      "Conta os 28 dias desde a abertura"
+    ]
+  },
+  "faq": {
+    "eyebrow": "Perguntas",
+    "title": "O que nos costumam perguntar.",
+    "items": [
+      {
+        "question": "Isto serve para insulina por abrir?",
+        "answer": "Não. Foi pensada para canetas já em utilização (até 28 dias fora do frigorífico). A insulina por abrir continua a dever ficar no frigorífico, como indica o fabricante."
+      },
+      {
+        "question": "Preciso de gelo ou de carregar baterias?",
+        "answer": "Não usa gelo: o isolamento é a seco, de parede dupla. A tampa tem eletrónica de baixo consumo para o LED, o ecrã e o registo de temperatura."
+      },
+      {
+        "question": "Quanto custa e quando chega?",
+        "answer": "Ainda estamos a validar o produto, por isso não há preço nem data fechados. Quem pré-reserva é avisado primeiro, sem compromisso de compra."
+      },
+      {
+        "question": "A pré-reserva é uma compra?",
+        "answer": "Não. É um email a manifestar interesse. Não pedimos pagamento nem dados bancários."
+      },
+      {
+        "question": "Substitui o conselho médico?",
+        "answer": "Não. Dá-te informação sobre a temperatura a que a caneta esteve exposta. Segue sempre as indicações do fabricante da insulina e da tua equipa de saúde."
+      }
+    ]
+  },
+  "final": {
+    "title": "Entra na lista do primeiro lote.",
+    "text": "Diz-nos como viajas e como transportas hoje a insulina. Ajuda-nos a construir o produto certo e és dos primeiros a saber quando estiver pronto.",
+    "cta": "Pré-reservar por email"
+  },
+  "footer": { "project": "SmartPatch · Projeto de Inovação e Empreendedorismo" },
+  "dialog": {
+    "title": "Pré-reserva SmartPatch",
+    "intro": "Deixa o teu e-mail para seres avisado(a) quando o 1.º lote estiver disponível. O resto é opcional.",
+    "close": "Fechar",
+    "email": "E-mail",
+    "emailPlaceholder": "exemplo@email.com",
+    "name": "Nome",
+    "namePlaceholder": "O teu nome",
+    "age": "Faixa etária",
+    "travel": "Viagens com mais de 1 h no calor",
+    "current": "Como transportas a insulina hoje?",
+    "ageOptions": ["Prefiro não dizer", "Menos de 20 anos", "20 a 35 anos", "36 a 60 anos", "Mais de 60 anos"],
+    "travelOptions": ["Selecionar", "Frequentemente", "Várias vezes no verão / férias", "Raramente"],
+    "currentOptions": ["Selecionar", "Bolsa térmica com gelo", "Na mala, sem proteção", "Termómetro digital / outra solução"],
+    "submit": "Enviar pré-reserva",
+    "sending": "A enviar…",
+    "sent": "Pré-reserva registada. Obrigado! Entramos em contacto quando o 1.º lote estiver disponível.",
+    "failed": "Não foi possível enviar. Tenta de novo ou escreve-nos por email.",
+    "alt": "Preferes email? Escreve para",
+    "autoresponse": "Obrigado pela tua pré-reserva da SmartPatch! Avisamos-te quando o 1.º lote estiver disponível. A pré-reserva não implica pagamento nem compromisso de compra."
+  }
+}

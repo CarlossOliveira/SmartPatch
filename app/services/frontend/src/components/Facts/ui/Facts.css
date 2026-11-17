@@ -1,0 +1,36 @@
+.facts {
+  border-block: 1px solid var(--line);
+}
+.facts .wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.fact {
+  padding: 28px 20px;
+  border-left: 1px solid var(--line);
+}
+.fact:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.fact strong {
+  display: block;
+  font: 500 clamp(2rem, 4vw, 3rem) / 1 var(--serif);
+  letter-spacing: -0.02em;
+}
+.fact span {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+}
+@media (max-width: 720px) {
+  .facts .wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+  .fact:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .fact:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
+  }
+}
