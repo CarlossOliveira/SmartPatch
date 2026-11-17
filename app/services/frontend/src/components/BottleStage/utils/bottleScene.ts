@@ -516,12 +516,16 @@ export function createBottleScene(
     { signal },
   );
 
+  let sizedW = 0;
+  let sizedH = 0;
   function resize(): void {
     const w = canvas.clientWidth;
     const h = canvas.clientHeight;
-    if (!w || !h) {
+    if (!w || !h || (w === sizedW && h === sizedH)) {
       return;
     }
+    sizedW = w;
+    sizedH = h;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.fov = w / h < 0.9 ? 36 : 28;
@@ -537,6 +541,8 @@ export function createBottleScene(
   resize();
 
   let visible = true;
+  // O canvas nasce com display:none; o observador pode dar "invisível" e não voltar a avisar. Por isso as primeiras frames desenham sempre.
+  let warmFrames = 30;
   const visibilityObserver = new IntersectionObserver(([entry]) => {
     visible = entry?.isIntersecting ?? true;
   });
@@ -546,10 +552,13 @@ export function createBottleScene(
   let elapsed = 0;
   renderer.setAnimationLoop(() => {
     const now = performance.now();
-    if (!visible || document.hidden) {
+    if (document.hidden || (!visible && warmFrames <= 0)) {
       last = now;
       return;
     }
+    warmFrames -= 1;
+    // Garante o tamanho mesmo que o ResizeObserver não tenha avisado a tempo.
+    resize();
     const dt = Math.min((now - last) / 1000, 0.05);
     last = now;
     elapsed += dt;

@@ -7,13 +7,14 @@ export function initAnalytics(): void {
 }
 
 /**
- * Regista um evento como POST a /analytics/<nome>[/<valor>…], para ser contado nos pedidos da Vercel.
+ * Regista um evento como GET a /analytics/<nome>[/<valor>…], para ser contado nos pedidos da Vercel.
  * Os valores das propriedades entram no caminho. Nunca passes e-mail, nome ou outro dado pessoal.
- * ponytail: ninguém responde a estas rotas (404/405 é esperado); a contagem vem dos registos de pedidos.
+ * O no-store impede o browser de servir o pedido da cache, o que perderia a contagem.
+ * ponytail: ninguém responde a estas rotas (404 é esperado); a contagem vem dos registos de pedidos.
  */
 export function trackEvent(name: string, data?: AnalyticsData): void {
   const segments = [name, ...Object.values(data ?? {}).map(String)].map(encodeURIComponent);
-  fetch(`/analytics/${segments.join('/')}`, { method: 'POST', keepalive: true }).catch(() => {
+  fetch(`/analytics/${segments.join('/')}`, { method: 'GET', cache: 'no-store', keepalive: true }).catch(() => {
     // Sem rede ou bloqueado por um bloqueador de anúncios: perde-se o evento, a página segue.
   });
 }
