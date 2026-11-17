@@ -21,10 +21,6 @@
   color: var(--ink);
   background: var(--paper-2);
 }
-.langs summary svg {
-  width: 15px;
-  height: 15px;
-}
 .langs ul {
   position: absolute;
   right: 0;
@@ -52,6 +48,6 @@
 }
 .langs a[aria-current='page'] {
   color: var(--ink);
-  font-weight: 600;
-  box-shadow: inset 2px 0 0 var(--ok);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
