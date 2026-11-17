@@ -151,6 +151,7 @@
     "close": "Cerrar",
     "email": "Correo electrónico",
     "emailPlaceholder": "ejemplo@correo.com",
+    "emailInvalid": "Usa un correo con un dominio válido, como nombre@ejemplo.es.",
     "name": "Nombre",
     "namePlaceholder": "Tu nombre",
     "age": "Rango de edad",

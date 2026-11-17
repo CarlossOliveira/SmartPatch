@@ -151,6 +151,7 @@
     "close": "关闭",
     "email": "电子邮箱",
     "emailPlaceholder": "example@email.com",
+    "emailInvalid": "请使用域名有效的邮箱，例如 name@example.cn。",
     "name": "姓名",
     "namePlaceholder": "您的姓名",
     "age": "年龄段",

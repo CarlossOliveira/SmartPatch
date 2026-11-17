@@ -95,6 +95,7 @@ export interface Messages {
     close: string;
     email: string;
     emailPlaceholder: string;
+    emailInvalid: string;
     name: string;
     namePlaceholder: string;
     age: string;

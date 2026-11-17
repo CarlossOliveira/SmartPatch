@@ -151,6 +151,7 @@
     "close": "Close",
     "email": "Email",
     "emailPlaceholder": "example@email.com",
+    "emailInvalid": "Use an email with a valid domain, like name@example.com.",
     "name": "Name",
     "namePlaceholder": "Your name",
     "age": "Age range",

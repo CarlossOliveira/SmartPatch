@@ -3,6 +3,7 @@ import { CONTACT_EMAIL } from '../../../defaults/contact';
 import { AGE_VALUES, CURRENT_VALUES, TRAVEL_VALUES } from '../../../defaults/reservation';
 import { useI18n } from '../../../hooks/useI18n';
 import type { CtaPlace } from '../../../types';
+import { hasKnownTld } from '../../../utils/email';
 import { useLeadForm } from '../hooks/useLeadForm';
 import './PreReserveDialog.css';
 
@@ -88,7 +89,20 @@ export function PreReserveDialog({ open, place, onClose }: PreReserveDialogProps
         <form hidden={status === 'sent'} onInput={handleInput} onSubmit={handleSubmit}>
           <label>
             {text.email}
-            <input name="email" type="email" required autoComplete="email" placeholder={text.emailPlaceholder} />
+            <input
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              placeholder={text.emailPlaceholder}
+              onInput={(event) => {
+                // O browser bloqueia o envio enquanto houver uma mensagem de validade. É só conveniência:
+                // quem desligar o JavaScript contorna-a, e o FormSubmit não valida o domínio.
+                const input = event.currentTarget;
+                const valid = input.value === '' || hasKnownTld(input.value);
+                input.setCustomValidity(valid ? '' : text.emailInvalid);
+              }}
+            />
           </label>
           <label>
             {text.name}

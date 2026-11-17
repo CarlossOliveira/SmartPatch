@@ -151,6 +151,7 @@
     "close": "Закрыть",
     "email": "E-mail",
     "emailPlaceholder": "example@email.com",
+    "emailInvalid": "Укажите e-mail с действующим доменом, например name@example.ru.",
     "name": "Имя",
     "namePlaceholder": "Ваше имя",
     "age": "Возрастная группа",
