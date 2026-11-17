@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { useEffect, useMemo, useState } from 'react';
 import { BottleStage } from '../components/BottleStage';
 import { Compare } from '../components/Compare';
@@ -73,6 +74,7 @@ export function App({ locale }: AppProps) {
         place={reserve.place}
         onClose={() => setReserve({ ...reserve, open: false })}
       />
+      <Analytics />
     </I18nContext.Provider>
   );
 }
