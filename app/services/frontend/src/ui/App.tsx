@@ -46,7 +46,7 @@ export function App({ locale }: AppProps) {
   }, []);
 
   function openReserve(place: CtaPlace): void {
-    trackEvent('cta_click', { local: place });
+    trackEvent('cta-clicked', { local: place });
     setReserve({ open: true, place });
   }
 

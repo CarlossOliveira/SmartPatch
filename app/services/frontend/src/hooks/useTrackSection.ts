@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { trackEvent } from '../services/analytics';
 
-/** Regista `secao_vista` uma vez, quando 40 % da secção fica visível. */
+/** Regista `section-viewed` uma vez, quando 40 % da secção fica visível. */
 export function useTrackSection<T extends HTMLElement>(name: string): React.RefObject<T | null> {
   const ref = useRef<T>(null);
 
@@ -13,7 +13,7 @@ export function useTrackSection<T extends HTMLElement>(name: string): React.RefO
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
-          trackEvent('secao_vista', { secao: name });
+          trackEvent('section-viewed', { secao: name });
           observer.disconnect();
         }
       },

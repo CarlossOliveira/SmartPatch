@@ -29,7 +29,7 @@ export function useLeadForm(open: boolean, place: CtaPlace) {
 
   useEffect(() => {
     if (open) {
-      trackEvent('form_aberto', { local: place });
+      trackEvent('pre-order-opened', { local: place });
     }
   }, [open, place]);
 
@@ -40,11 +40,11 @@ export function useLeadForm(open: boolean, place: CtaPlace) {
     }
     if (!started.current) {
       started.current = true;
-      trackEvent('form_iniciado', { local: place });
+      trackEvent('pre-order-started', { local: place });
     }
     if (!fieldsSeen.current.has(field.name)) {
       fieldsSeen.current.add(field.name);
-      trackEvent('form_campo', { campo: field.name });
+      trackEvent('pre-order-field', { campo: field.name });
     }
   }
 
@@ -63,18 +63,18 @@ export function useLeadForm(open: boolean, place: CtaPlace) {
     try {
       await sendLead(lead, locale, t.dialog.autoresponse);
       sent.current = true;
-      trackEvent('form_enviado', { local: place });
+      trackEvent('pre-order-made', { local: place });
       form.reset();
       setStatus('sent');
     } catch {
-      trackEvent('form_erro');
+      trackEvent('pre-order-failed');
       setStatus('error');
     }
   }
 
   function handleClosed(): void {
     if (!sent.current) {
-      trackEvent('form_fechado_sem_enviar', { preencheu: started.current });
+      trackEvent('pre-order-abandoned', { preencheu: started.current });
     }
     started.current = false;
     sent.current = false;
