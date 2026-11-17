@@ -15,12 +15,13 @@ export function initAnalytics(locale: Locale): void {
 
 /**
  * Regista um evento como visita virtual a /analytics/<nome>[/<valor>…].
- * A rota /analytics/<nome> conta cada evento no painel Routes e o caminho completo, com os valores,
- * aparece no painel Pages. Nunca passes e-mail, nome ou outro dado pessoal nos valores.
+ * Cada valor é um filho da rota, por exemplo /analytics/section-viewed/faq, e conta à parte
+ * no painel Routes. Nunca passes e-mail, nome ou outro dado pessoal nos valores.
  * ponytail: os eventos contam como visitas de página (inflacionam o total de Page Views).
  * O envio de eventos a sério (track) exige o plano Pro.
  */
 export function trackEvent(name: string, data?: AnalyticsData): void {
   const segments = [name, ...Object.values(data ?? {}).map(String)].map(encodeURIComponent);
-  pageview({ route: `/analytics/${segments[0]}`, path: `/analytics/${segments.join('/')}` });
+  const path = `/analytics/${segments.join('/')}`;
+  pageview({ route: path, path });
 }
