@@ -4,6 +4,7 @@ dist/
 .DS_Store
 .claude/
 
+# Ignore environment files, except for the example file
 *.env*
 !*.env.example
 *.gitignore.*
