@@ -15,7 +15,7 @@ jobs:
       enabled: ${{ steps.read.outputs.enabled }}
       jobs: ${{ steps.read.outputs.jobs }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - id: read
         working-directory: app
@@ -26,7 +26,7 @@ jobs:
     if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - name: ESLint
         working-directory: app
@@ -40,7 +40,7 @@ jobs:
     if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).architecture
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - name: Camadas e ciclos
         working-directory: app
@@ -54,7 +54,7 @@ jobs:
     if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - working-directory: app
         run: pnpm test
@@ -66,7 +66,7 @@ jobs:
     env:
       SITE_URL: http://localhost:4173
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - working-directory: app
         run: pnpm build

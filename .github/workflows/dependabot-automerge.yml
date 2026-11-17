@@ -13,7 +13,7 @@ jobs:
       enabled: ${{ steps.read.outputs.enabled }}
       jobs: ${{ steps.read.outputs.jobs }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - id: read
         working-directory: app

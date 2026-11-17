@@ -17,7 +17,7 @@ jobs:
       enabled: ${{ steps.read.outputs.enabled }}
       jobs: ${{ steps.read.outputs.jobs }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ./.github/actions/setup
       - id: read
         working-directory: app
@@ -31,7 +31,7 @@ jobs:
       contents: read
       pull-requests: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Procurar segredos no histórico
@@ -44,7 +44,7 @@ jobs:
     if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).vulnscan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Procurar vulnerabilidades conhecidas nas dependências
         uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
         with:
