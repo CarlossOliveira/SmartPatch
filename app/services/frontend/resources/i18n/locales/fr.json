@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "SmartPatch — Bouteille isotherme intelligente pour stylos à insuline",
-    "description": "SmartPatch : une bouteille isotherme avec anneau LED et écran qui surveille la température de vos stylos à insuline en voyage et compte les 28 jours d'utilisation. Précommande ouverte, sans glace.",
+    "description": "SmartPatch : bouteille isotherme avec anneau LED et écran qui surveille la température de vos stylos à insuline et compte 28 jours d'usage. Précommande ouverte.",
     "ogTitle": "SmartPatch — Sachez en un coup d'œil dans quel état est votre insuline",
     "ogDescription": "Bouteille isotherme à sec avec anneau LED, historique de température et compteur de 28 jours. Précommande ouverte.",
     "twitterTitle": "SmartPatch — bouteille isotherme intelligente pour insuline",
@@ -13,7 +13,8 @@
     "logo": "SmartPatch, accueil",
     "menu": "Ouvrir le menu",
     "mainNav": "Principale",
-    "languages": "Langue"
+    "languages": "Langue",
+    "loading": "Chargement"
   },
   "nav": ["Le problème", "Comment ça marche", "Comparaison", "Questions"],
   "reserveShort": "Précommander",

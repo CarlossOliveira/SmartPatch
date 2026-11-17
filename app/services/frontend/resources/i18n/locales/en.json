@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "SmartPatch — Smart thermal bottle for insulin pens",
-    "description": "SmartPatch: a thermal bottle with an LED ring and a screen that monitors the temperature of your insulin pens on the go and counts the 28 days of use. Pre-reservations open, no ice needed.",
+    "description": "SmartPatch: thermal bottle with an LED ring and screen that monitors your insulin pens' temperature and counts the 28 days of use. Pre-reservations open.",
     "ogTitle": "SmartPatch — Know the state of your insulin at a glance",
     "ogDescription": "Dry thermal bottle with an LED ring, temperature history and a 28-day counter. Pre-reservations open.",
     "twitterTitle": "SmartPatch — smart thermal bottle for insulin",
@@ -13,7 +13,8 @@
     "logo": "SmartPatch, home",
     "menu": "Open menu",
     "mainNav": "Main",
-    "languages": "Language"
+    "languages": "Language",
+    "loading": "Loading"
   },
   "nav": ["The problem", "How it works", "Comparison", "Questions"],
   "reserveShort": "Pre-reserve",

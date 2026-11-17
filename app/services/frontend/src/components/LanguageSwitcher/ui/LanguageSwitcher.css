@@ -1,30 +1,57 @@
-.langs ul {
-  display: flex;
-  gap: 2px;
+.langs {
+  position: relative;
+}
+.langs summary {
   list-style: none;
-  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font: 500 0.78rem var(--sans);
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.langs summary::-webkit-details-marker {
+  display: none;
+}
+.langs summary:hover,
+.langs[open] summary {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+.langs summary svg {
+  width: 15px;
+  height: 15px;
+}
+.langs ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 70;
+  min-width: 150px;
+  padding: 6px;
+  list-style: none;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px -16px rgba(14, 26, 43, 0.35);
 }
 .langs a {
   display: block;
-  padding: 6px 7px;
+  padding: 8px 12px;
   border-radius: 8px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.9rem;
   text-decoration: none;
   color: var(--ink-2);
 }
 .langs a:hover {
-  color: var(--ink);
   background: var(--paper-2);
+  color: var(--ink);
 }
 .langs a[aria-current='page'] {
   color: var(--ink);
-  box-shadow: inset 0 -2px 0 var(--ok);
-}
-@media (max-width: 420px) {
-  .langs a {
-    padding: 6px 4px;
-    font-size: 0.72rem;
-  }
+  font-weight: 600;
+  box-shadow: inset 2px 0 0 var(--ok);
 }

@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import type { CSSProperties } from 'react';
 import { useI18n } from '../../../hooks/useI18n';
 import { usePrefersReducedMotion } from '../../../hooks/usePrefersReducedMotion';
@@ -11,11 +11,16 @@ import { BottleSvg } from './BottleSvg';
 import { Dial } from './Dial';
 import './BottleStage.css';
 
+interface BottleStageProps {
+  /** Chamado quando o modelo 3D arrancou ou falhou, isto é, quando o palco já não vai mudar. */
+  onSettled?: () => void;
+}
+
 /**
  * Palco do hero: modelo 3D (ou SVG), anéis de temperatura e dias e o estado do LED.
  * O estado da simulação (temperatura e dias) vive aqui e não é usado fora do palco.
  */
-export function BottleStage() {
+export function BottleStage({ onSettled }: BottleStageProps) {
   const { t } = useI18n();
   const text = t.stage;
   const [temp, setTemp] = useState(TEMP_RANGE.initial);
@@ -28,12 +33,19 @@ export function BottleStage() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const bottleRef = useRef<HTMLDivElement>(null);
   const reduceMotion = usePrefersReducedMotion();
-  const glReady = useBottleScene(
+  const sceneStatus = useBottleScene(
     canvasRef,
     stageRef,
     { temp, days, color: status.color, daysUnit: text.dialDays },
     reduceMotion,
   );
+  const glReady = sceneStatus === 'ready';
+
+  useEffect(() => {
+    if (sceneStatus !== 'loading') {
+      onSettled?.();
+    }
+  }, [sceneStatus, onSettled]);
   useTilt(wrapRef, bottleRef, reduceMotion);
   const tempId = useId();
   const daysId = useId();

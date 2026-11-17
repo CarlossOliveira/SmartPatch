@@ -136,7 +136,7 @@ export function buildRootPage(siteUrl: string): string {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>${SITE_NAME}</title>
+    <title>${escapeHtml(MESSAGES[FALLBACK_LOCALE].meta.title)}</title>
     <meta name="description" content="${escapeHtml(MESSAGES[FALLBACK_LOCALE].meta.description)}" />
     <link rel="canonical" href="${absoluteUrl(siteUrl, '/')}" />
     ${alternateLinks(siteUrl).join('\n    ')}

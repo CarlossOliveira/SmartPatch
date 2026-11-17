@@ -13,7 +13,8 @@
     "logo": "SmartPatch，首页",
     "menu": "打开菜单",
     "mainNav": "主导航",
-    "languages": "语言"
+    "languages": "语言",
+    "loading": "加载中"
   },
   "nav": ["问题所在", "工作原理", "对比", "常见问题"],
   "reserveShort": "预订",

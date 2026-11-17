@@ -2,19 +2,27 @@ import { useEffect, useRef, useState } from 'react';
 import type { RefObject } from 'react';
 import type { BottleScene, SimInput } from '../types';
 
+export type SceneStatus = 'loading' | 'ready' | 'failed';
+
 /**
- * Liga o modelo 3D ao canvas. Devolve true quando o WebGL arrancou.
+ * Liga o modelo 3D ao canvas. Devolve "ready" quando o WebGL arrancou e "failed" quando não deu.
  * O módulo do three.js carrega à parte, para não pesar no primeiro ecrã.
+ * A preferência de movimento reduzido é lida em cada frame: mudá-la não recria a cena.
  */
 export function useBottleScene(
   canvasRef: RefObject<HTMLCanvasElement | null>,
   stageRef: RefObject<HTMLElement | null>,
   sim: SimInput,
   reduceMotion: boolean,
-): boolean {
-  const [ready, setReady] = useState(false);
+): SceneStatus {
+  const [status, setStatus] = useState<SceneStatus>('loading');
   const sceneRef = useRef<BottleScene | null>(null);
   const firstSim = useRef(sim);
+  const reduceRef = useRef(reduceMotion);
+
+  useEffect(() => {
+    reduceRef.current = reduceMotion;
+  }, [reduceMotion]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -29,22 +37,26 @@ export function useBottleScene(
         if (cancelled) {
           return;
         }
-        scene = createBottleScene(canvas, stage, firstSim.current, reduceMotion);
+        scene = createBottleScene(canvas, stage, firstSim.current, () => reduceRef.current);
         sceneRef.current = scene;
-        setReady(scene !== null);
+        setStatus(scene ? 'ready' : 'failed');
       })
       // WebGL ou módulo indisponível: o SVG fica como alternativa.
-      .catch(() => undefined);
+      .catch(() => {
+        if (!cancelled) {
+          setStatus('failed');
+        }
+      });
     return () => {
       cancelled = true;
       scene?.dispose();
       sceneRef.current = null;
     };
-  }, [canvasRef, stageRef, reduceMotion]);
+  }, [canvasRef, stageRef]);
 
   useEffect(() => {
     sceneRef.current?.setSim({ temp: sim.temp, days: sim.days, color: sim.color, daysUnit: sim.daysUnit });
   }, [sim.temp, sim.days, sim.color, sim.daysUnit]);
 
-  return ready;
+  return status;
 }

@@ -101,7 +101,7 @@ export function createBottleScene(
   canvas: HTMLCanvasElement,
   stage: HTMLElement,
   initial: SimInput,
-  reduceMotion: boolean,
+  reduceMotion: () => boolean,
 ): BottleScene | null {
   let renderer: THREE.WebGLRenderer;
   try {
@@ -563,7 +563,7 @@ export function createBottleScene(
       vyaw *= friction;
       vpitch *= friction;
       idle += dt;
-      if (!reduceMotion && idle > 2.5) {
+      if (!reduceMotion() && idle > 2.5) {
         spin(0, 0.25 * dt);
       }
     }
@@ -574,7 +574,7 @@ export function createBottleScene(
     ty += (py - ty) * k(4);
     tilt.rotation.x = 0.1 + ty * 0.12;
     tilt.rotation.z = -tx * 0.06;
-    tilt.position.y = reduceMotion ? 0 : Math.sin(elapsed * 1.1) * 0.05;
+    tilt.position.y = reduceMotion() ? 0 : Math.sin(elapsed * 1.1) * 0.05;
 
     tShow += (tGoal - tShow) * k(9);
     dShow += (dGoal - dShow) * k(9);
@@ -584,7 +584,7 @@ export function createBottleScene(
       lastKey = key2;
       drawScreen(tShow, dShow, `#${ledColor.getHexString()}`);
     }
-    const pulse = reduceMotion ? 1 : 0.85 + 0.15 * Math.sin(elapsed * 2.2);
+    const pulse = reduceMotion() ? 1 : 0.85 + 0.15 * Math.sin(elapsed * 2.2);
     ledMat.emissive.copy(ledColor);
     ledMat.emissiveIntensity = 3 * pulse;
     haloMat.color.copy(ledColor);

@@ -45,7 +45,7 @@ export interface Messages {
     twitterDescription: string;
     orgDescription: string;
   };
-  a11y: { skip: string; logo: string; menu: string; mainNav: string; languages: string };
+  a11y: { skip: string; logo: string; menu: string; mainNav: string; languages: string; loading: string };
   /** problema, como, comparar, faq */
   nav: string[];
   reserveShort: string;

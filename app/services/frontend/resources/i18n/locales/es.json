@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "SmartPatch — Botella térmica inteligente para plumas de insulina",
-    "description": "SmartPatch: botella térmica con anillo LED y pantalla que vigila la temperatura de tus plumas de insulina de viaje y cuenta los 28 días de uso. Prerreserva abierta, sin hielo.",
+    "description": "SmartPatch: botella térmica con anillo LED y pantalla que vigila la temperatura de tus plumas de insulina y cuenta los 28 días de uso. Prerreserva abierta.",
     "ogTitle": "SmartPatch — Sabe en qué estado está tu insulina de un vistazo",
     "ogDescription": "Botella térmica en seco con anillo LED, historial de temperatura y contador de 28 días. Prerreserva abierta.",
     "twitterTitle": "SmartPatch — botella térmica inteligente para insulina",
@@ -13,7 +13,8 @@
     "logo": "SmartPatch, inicio",
     "menu": "Abrir menú",
     "mainNav": "Principal",
-    "languages": "Idioma"
+    "languages": "Idioma",
+    "loading": "Cargando"
   },
   "nav": ["El problema", "Cómo funciona", "Comparación", "Preguntas"],
   "reserveShort": "Prerreservar",
