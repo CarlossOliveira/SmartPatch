@@ -14,14 +14,13 @@ export function initAnalytics(locale: Locale): void {
 }
 
 /**
- * Regista um evento como GET a /analytics/<nome>[/<valor>…], para ser contado nos pedidos da Vercel.
- * Os valores das propriedades entram no caminho. Nunca passes e-mail, nome ou outro dado pessoal.
- * O no-store impede o browser de servir o pedido da cache, o que perderia a contagem.
- * ponytail: ninguém responde a estas rotas (404 é esperado); a contagem vem dos registos de pedidos.
+ * Regista um evento como visita virtual a /analytics/<nome>[/<valor>…].
+ * A rota /analytics/<nome> conta cada evento no painel Routes e o caminho completo, com os valores,
+ * aparece no painel Pages. Nunca passes e-mail, nome ou outro dado pessoal nos valores.
+ * ponytail: os eventos contam como visitas de página (inflacionam o total de Page Views).
+ * O envio de eventos a sério (track) exige o plano Pro.
  */
 export function trackEvent(name: string, data?: AnalyticsData): void {
   const segments = [name, ...Object.values(data ?? {}).map(String)].map(encodeURIComponent);
-  fetch(`/analytics/${segments.join('/')}`, { method: 'GET', cache: 'no-store', keepalive: true }).catch(() => {
-    // Sem rede ou bloqueado por um bloqueador de anúncios: perde-se o evento, a página segue.
-  });
+  pageview({ route: `/analytics/${segments[0]}`, path: `/analytics/${segments.join('/')}` });
 }
