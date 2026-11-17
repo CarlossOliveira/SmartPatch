@@ -33,7 +33,7 @@ jobs:
     steps:
       - id: metadata
         if: github.event_name == 'pull_request'
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       # Versões maiores (major) ficam para revisão manual: podem quebrar sem que os testes o vejam.
