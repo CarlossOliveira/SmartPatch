@@ -2,6 +2,10 @@ name: Dependabot auto-merge
 
 on:
   pull_request:
+  # A cada dois dias revê os PRs do Dependabot ainda abertos (o evento pull_request só corre uma vez por PR).
+  schedule:
+    - cron: '0 6 */2 * *'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,22 +25,41 @@ jobs:
 
   automerge:
     needs: config
-    if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).automerge && github.actor == 'dependabot[bot]'
+    if: needs.config.outputs.enabled == 'true' && fromJSON(needs.config.outputs.jobs).automerge && (github.event_name != 'pull_request' || github.actor == 'dependabot[bot]')
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
     steps:
       - id: metadata
+        if: github.event_name == 'pull_request'
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       # Versões maiores (major) ficam para revisão manual: podem quebrar sem que os testes o vejam.
       - name: Aprovar e ativar o auto-merge
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+        if: github.event_name == 'pull_request' && steps.metadata.outputs.update-type != 'version-update:semver-major'
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh pr review --approve "$PR_URL"
           gh pr merge --auto --squash "$PR_URL"
+      # ponytail: o título "from X to Y" dá a versão; PRs sem esse formato (grupos) contam como não-major.
+      - name: Rever os PRs abertos do Dependabot
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh pr list --author 'app/dependabot' --state open --json url,title --jq '.[] | [.url, .title] | @tsv' |
+          while IFS="$(printf '\t')" read -r url title; do
+            from=$(printf '%s' "$title" | sed -nE 's/.* from v?([0-9]+)[.0-9]* to v?([0-9]+).*/\1/p')
+            to=$(printf '%s' "$title" | sed -nE 's/.* from v?([0-9]+)[.0-9]* to v?([0-9]+).*/\2/p')
+            if [ -n "$from" ] && [ "$from" != "$to" ]; then
+              echo "Major, fica para revisão manual: $title"
+            else
+              gh pr review --approve "$url"
+              gh pr merge --auto --squash "$url"
+            fi
+          done

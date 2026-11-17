@@ -40,6 +40,8 @@ export function useBottleScene(
         scene = createBottleScene(canvas, stage, firstSim.current, () => reduceRef.current);
         sceneRef.current = scene;
         setStatus(scene ? 'ready' : 'failed');
+        // GPU a perder o contexto (muitos contextos abertos, driver): o canvas fica em branco, por isso volta o SVG.
+        canvas.addEventListener('webglcontextlost', () => setStatus('failed'), { once: true });
       })
       // WebGL ou módulo indisponível: o SVG fica como alternativa.
       .catch(() => {
